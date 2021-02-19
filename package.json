@@ -1,0 +1,22 @@
+{
+  "name": "top-10-word-count",
+  "version": "1.0.0",
+  "description": "Contains top ten words count from the given url txt file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunckm/top-10-word.git"
+  },
+  "author": "arjunckm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjunckm/top-10-word/issues"
+  },
+  "homepage": "https://github.com/arjunckm/top-10-word#readme",
+  "dependencies": {
+    "got": "^11.8.1"
+  }
+}
