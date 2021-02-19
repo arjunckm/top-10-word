@@ -8,7 +8,7 @@ const getInitialFile = (async () => {
 	try {
 		const response = await got(fileUrl);
 		let fileContent = response.body;        
-
+        getWordFrequency(fileContent,10);
 	} catch (err) {
 		console.log(err.response.body);
 	}
@@ -26,5 +26,25 @@ const getDetailsOfWord = ( async (wordSent)=>{
     }
 
 })
-getDetailsOfWord('the');
-//getInitialFile();
+
+const getWordFrequency= (async(fileContent, noOfWords)=>{
+    //remove symbols and clean file content;    
+    let updatedContent = fileContent.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+    updatedContent = (updatedContent.replace(/\n/g, ' ')).toLowerCase();
+
+    //split updatedContent and creat array of words
+    let words = updatedContent.split(' ') .filter(val => /\S/.test(val));
+
+    let wordCount={};
+    words.forEach((word)=>{
+        wordCount[word] = wordCount[word] || 0;
+        wordCount[word]++;
+    })
+
+
+    console.log(wordCount);
+
+})
+
+//getDetailsOfWord('the');
+getInitialFile();
